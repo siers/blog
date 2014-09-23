@@ -44,7 +44,10 @@ main' = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
-sourcify = system "git ls-files | xargs tar c .git | bzip2 -9 - > source.tar.bz2"
+sourcify = system $
+    "git ls-files | " ++
+    "xargs tar -c --transform 's:^:source/:' .git | " ++
+    "bzip2 -9 - > source.tar.bz2"
 
 main :: IO ()
 main = sourcify >> main'
