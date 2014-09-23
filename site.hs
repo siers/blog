@@ -1,4 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
+
+import System.Process
 import Data.Monoid (mappend)
 import Hakyll
 
@@ -12,9 +14,8 @@ monodateCtx =
     dateField "date" "%Y-%m-%d" `mappend`
     defaultContext
 
-main :: IO ()
-main = hakyll $ do
-    match "images/*" $ do
+main' = hakyll $ do
+    (`mapM` ["images/*", "source.tar.bz2"]) . (flip match) $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -42,3 +43,8 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
 
     match "templates/*" $ compile templateCompiler
+
+sourcify = system "git ls-files | xargs tar c .git | bzip2 -9 - > source.tar.bz2"
+
+main :: IO ()
+main = sourcify >> main'
