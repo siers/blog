@@ -1,8 +1,14 @@
 *.o
 site
 site.hi
+
 _cache
-about.md
-source.tar.bz2
 _site
+
+.cabal-sandbox
+cabal.sandbox.config
+
 posts
+about.md
+
+source.tar.bz2
