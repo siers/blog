@@ -37,9 +37,13 @@ a    { color: #3e0078; font-style: italic; text-decoration: none; }
 article p       { text-indent: 1em; }
 article header  { position: relative; line-height: 40px; }
 article p code  { padding: 1px; background: #f0f0f0; padding: 2px; font-size: 15px; }
-article pre     { padding: 0.5em; background: #eacafc; font-size: 15px; color: black; margin-left: 4em; }
+article pre     { padding: 0.5em; background: #eacafc; font-size: 15px; color: black; margin-left: 60px; }
 article li      { list-style-type: decimal; }
 article img     { float: right; padding: 10px 0 10px 20px; }
+
+article blockquote        { background: #f9f9f9; border-left: 10px solid #ccc; margin: 0 0 0 60px; padding: 0.5em; }
+article blockquote:before { color: #ccc; content: open-quote; font-size: 4em; line-height: 0.1em; margin-right: 0.25em; vertical-align: -0.4em; }
+article blockquote p      { display: inline; }
 
 article p a code,
 article a:hover  { text-decoration: underline; }
