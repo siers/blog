@@ -34,7 +34,7 @@ a    { color: #3e0078; font-style: italic; text-decoration: none; }
 }
 
 /* article */
-article p       { text-indent: 1em; }
+article p       { /* text-indent: 1em; either it looks great or turns everything to shit, so unfortunately to the trash it goes. */ }
 article header  { position: relative; line-height: 40px; }
 article p code  { padding: 1px; background: #f0f0f0; padding: 2px; font-size: 15px; }
 article pre     { padding: 0.5em; background: #eacafc; font-size: 15px; color: black; margin-left: 60px; }
