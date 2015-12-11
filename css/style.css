@@ -72,6 +72,9 @@ article h2:hover:before {
     border-top: 1px dotted;
     text-align: center;
     font-size: 3.5em;
+    font-family: georgia, 'Arial Unicode MS', 'Code2000', 'DejaVu Sans', 'Dingbats', 'EversonMono',
+    'EversonMono-Bold', 'EversonMono-BoldOblique', 'EversonMono-ObliquDejaVuique', 'FreeSerif',
+    'GNU Unifont', 'JunicodeRegular', 'LastResort', 'LeedsUni', 'Segoe UI Symbol', 'Symbola';
 }
 
 /* footer { border-top: 1px dotted #222; margin: 2em 1em 1em; } */
