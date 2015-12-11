@@ -1,0 +1,17 @@
+#!/bin/sh
+
+where="reports/report$1"
+
+if tty -s; then
+    if ! ls logs | grep "^$(date +%F)-access.log" || ! ls access.log &> /dev/null; then
+        ./get
+    fi >&2
+    cat access.log
+else
+    cat
+fi | \
+     \
+./filter | ./stats | sort | uniq -c | sort -nr > ${where}_
+(grep /posts/ < ${where}_; echo; cat ${where}_) > $where
+rm ${where}_
+ls -l $where

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p logs
+name="logs/$(date +%F)-access.log"
+scp 'blog:$HOME/logs/access.log' $name
+ln -sf $name access.log

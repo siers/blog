@@ -1,0 +1,5 @@
+Reports of last 12 months:
+    for i in {1..12}; do cat access.log | ./month "$i month ago" | ./gen -$i; done
+
+Summary
+    ./gen
