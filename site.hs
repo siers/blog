@@ -23,7 +23,7 @@ main' = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    (`mapM` ["about.md", "posts/*"]) . (flip match) $ do
+    (`mapM` ["code.md", "about.md", "posts/*"]) . (flip match) $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
