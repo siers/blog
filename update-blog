@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# 0 0,4,8,12,16,20 * * * sleep $(( $RANDOM \% 60 + 60 )); $HOME/bin/jobs/update-blog &> /tmp/.blogout; DISPLAY="$(ps aux | grep -Po '(?<=xserverrc ):\d+')" notify-send "blog@$(date +\%H:\%M)"
+
+compile() {
+    if [ -z "$quick" ]; then
+        cabal exec ghc site
+    else
+        true
+    fi
+}
+
+build() {
+    cd ~s/code/haskell/blag
+    compile && \
+        ./site bu || (./site clean && ./site bu) && \
+        rsync -r _site blog:/home/sie
+}
+
+build 2>&1 | tee /var/tmp/blaglog
