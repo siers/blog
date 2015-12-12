@@ -4,17 +4,19 @@ html, button, input, select, textarea { color: #222; }
 body { font: 20px georgia; margin: 0; }
 a    { color: #3e0078; font-style: italic; text-decoration: none; }
 
-.body        { color: #444; }
-.body, .head { max-width: 39em; margin: auto; padding: 15px 0; }
+#body       { color: #444; }
+#body, menu { max-width: 39em; margin: auto; padding: 15px 0; }
+#blackline  { background: #444; }
 
-.top         { color: #999; background: #444; }
-.top a       { color: #ccc; font-style: normal; }
-.head > span { font: bold 40px 'Helvetica'; }
+menu            { color: #999; }
+menu a          { color: #ccc; font-style: normal; }
+menu menuitem   { display: inline-block; margin-left: 2em; }
+#home           { display: block; margin-left: 0; font: bold 40px 'Helvetica'; display: block; }
 
-.index a { font-style: normal; color: #999; }
-.index ul { margin: 2em 0 0; padding: 0; }
-.index li { margin: 0 0 1em; padding: 0; list-style: none; font-family: 'Monospace'; position: relative; }
-.index li:hover:before {
+#index a { font-style: normal; color: #999; }
+#index ul { margin: 2em 0 0; padding: 0; }
+#index li { margin: 0 0 1em; padding: 0; list-style: none; font-family: 'Monospace'; position: relative; }
+#index li:hover:before {
     margin-left: -1em;
     content: "§";
     position: absolute;
