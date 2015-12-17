@@ -1,3 +1,4 @@
 #!/bin/sh
 
-grep -Ev "favicon.ico|GET /[^ ]*(css|jpg|png|js|j\.s|google[a-f0-9]*\.html) |Googlebot|robots.txt|Baiduspider|YandexBot|YandexDirect|similartech.com/smtbot"
+grep -Ev "favicon.ico|GET /[^ ]*(css|jpg|png|js|j\.s|google[a-f0-9]*\.html) |Googlebot|robots.txt|Baiduspider|YandexBot|\
+YandexDirect|similartech.com/smtbot|Twitterbot|bot\W"
