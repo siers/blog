@@ -1,6 +1,7 @@
 #!/bin/sh
 
-where="reports/report$1"
+dir="reports"
+where="$dir/report$1"
 
 if tty -s; then
     if ! ls logs | grep "^$(date +%F)-access.log" || ! ls access.log &> /dev/null; then
@@ -11,7 +12,7 @@ else
     cat
 fi | \
      \
-./filter | ./stats | sort | uniq -c | sort -nr > ${where}_
+./filter | tee "$dir/clean" | ./stats | sort | uniq -c | sort -nr > ${where}_
 (grep /posts/ < ${where}_; echo; cat ${where}_) > $where
 rm ${where}_
-ls -l $where
+ls -l "$dir/clean" $where
