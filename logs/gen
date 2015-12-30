@@ -13,6 +13,6 @@ else
 fi | \
      \
 ./filter | tee "$dir/clean" | ./stats | sort | uniq -c | sort -nr > ${where}_
-(grep /posts/ < ${where}_; echo; cat ${where}_) > $where
+(grep /posts/ < ${where}_; echo; cat ${where}_ | grep -v /posts/) > $where
 rm ${where}_
 ls -l "$dir/clean" $where
