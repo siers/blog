@@ -1,5 +1,6 @@
 Reports of last 12 months:
     for i in {0..12}; do i="$(printf "%02d" $i)"; cat access.log | ./month "$i month ago" | ./gen -$i; done
+    vim -p reports/report-*
 
 Summary
     ./gen
