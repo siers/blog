@@ -3,8 +3,10 @@
 dir="reports"
 where="$dir/report$1"
 
+mkdir -p "$dir"
+
 if tty -s; then
-    if ! ls logs | grep "^$(date +%F)-access.log" || ! ls access.log &> /dev/null; then
+    if ! ls logs 2> /dev/null | grep "^$(date +%F)-access.log" || ! ls access.log &> /dev/null; then
         ./get
     fi >&2
     cat access.log
