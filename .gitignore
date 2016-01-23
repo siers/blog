@@ -4,6 +4,7 @@ site.hi
 
 _cache
 _site
+logs/additional-filters
 
 .cabal-sandbox
 cabal.sandbox.config
