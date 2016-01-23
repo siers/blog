@@ -9,6 +9,7 @@ _site
 cabal.sandbox.config
 
 posts
+images
 about.md
 
 source.tar.bz2
