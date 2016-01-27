@@ -6,6 +6,7 @@ where="$dir/report$1"
 mkdir -p "$dir"
 
 if tty -s; then
+    [ -n "$redownload" ] && rm access.log
     if ! ls logs 2> /dev/null | grep "^$(date +%F)-access.log" || ! ls access.log &> /dev/null; then
         ./get
     fi >&2
