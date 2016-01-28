@@ -3,4 +3,5 @@
 more="additional-filters"
 
 grep -Ev "favicon.ico|GET /[^ ]*(css|jpg|png|js|j\.s|google[a-f0-9]*\.html) |Googlebot|robots.txt|Baiduspider|YandexBot|\
-YandexDirect|similartech.com/smtbot|Twitterbot|bot\W$([ -e "$more" ] && cat "$more")"
+YandexDirect|similartech.com/smtbot|Twitterbot|facebookexternalhit|Google-HTTP-Java-Client|\
+bot\W$([ -e "$more" ] && cat "$more")"
