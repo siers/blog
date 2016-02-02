@@ -1,1 +1,23 @@
-This blog was once written in ruby, jekyll and I really disliked jekyll since the day I saw it. I just didn't know of anything better until I discovered hakyll.
+¶ Hey there.
+If you actually look at this, and I'm sure very few people have
+I wouldn't mind an email or a message,
+just to know it was worthwhile keeping this presentable. :)
+
+¶ About
+This blog was once written in ruby, jekyll and I really disliked jekyll since the day I saw it.
+I just didn't know of anything better until I discovered hakyll.
+
+¶ Compiling
+It should be something like:
+
+    cabal build
+    cabal exec ghc site
+    ./site build
+
+¶ Logs
+I wrote a bunch of scripts for analyzing lighty logs,
+so check those out! Sample logs(anonymized) are provided.
+
+    cd logs
+    ./gen
+    vim -p reports/{report,clean}

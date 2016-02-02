@@ -2,5 +2,11 @@
 
 mkdir -p logs
 name="logs/$(date +%F)-access.log"
-scp 'blog:$HOME/logs/access.log' $name
+
+if ! getent hosts blog > /dev/null; then
+    cp sample-logs $name
+else
+    scp 'blog:$HOME/logs/access.log' $name
+fi
+
 ln -sf $name access.log

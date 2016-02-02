@@ -4,3 +4,4 @@ Reports of last 12 months:
 
 Summary
     ./gen
+    vim -p reports/{report,clean}
