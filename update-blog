@@ -14,7 +14,7 @@ build() {
     cd ~s/code/haskell/blag
     compile && \
         ./site bu || (./site clean && ./site bu) && \
-        rsync -r _site blog:/home/sie
+        rsync -a _site/ 'blog:$HOME/html/'
 }
 
 build 2>&1 | tee /var/tmp/blaglog
