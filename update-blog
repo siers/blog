@@ -4,7 +4,7 @@
 
 compile() {
     if [ -z "$quick" ]; then
-        cabal exec ghc site
+        stack build
     else
         true
     fi
@@ -12,8 +12,7 @@ compile() {
 
 build() {
     cd ~s/code/haskell/blag
-    compile && \
-        ./site bu || (./site clean && ./site bu) && \
+    compile && (stack exec site clean && stack exec site bu) && \
         rsync -a _site/ 'blog:$HOME/html/'
 }
 

@@ -79,7 +79,7 @@ article h2:hover:before {
 
 .footnotes ol li p a:last-child { padding-left: 10px; }
 
-#end {
+.sep, #end {
     width: 2em;
     margin: 1em auto;
     border-top: 1px dotted;
@@ -89,6 +89,7 @@ article h2:hover:before {
     'EversonMono-Bold', 'EversonMono-BoldOblique', 'EversonMono-ObliquDejaVuique', 'FreeSerif',
     'GNU Unifont', 'JunicodeRegular', 'LastResort', 'LeedsUni', 'Segoe UI Symbol', 'Symbola';
 }
+.sep { margin: 25px auto 35px; }
 
 /* footer { border-top: 1px dotted #222; margin: 2em 1em 1em; } */
 

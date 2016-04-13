@@ -1,7 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import System.Process
-import Data.Monoid (mappend)
 import Hakyll
 
 postCtx :: Context String
@@ -23,7 +22,7 @@ main' = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    (`mapM` ["code.md", "about.md", "posts/*"]) . (flip match) $ do
+    (`mapM` ["code.md", "portfolio.md", "about.md", "posts/*"]) . (flip match) $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
