@@ -1,13 +1,11 @@
 *.o
 site
 site.hi
+.stack-work
 
 _cache
 _site
 logs/additional-filters
-
-.cabal-sandbox
-cabal.sandbox.config
 
 posts
 images
