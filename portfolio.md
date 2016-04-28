@@ -25,8 +25,8 @@ Implements some methods of the SOCKS5 protocol. Works in conjunction with firefo
 
 <div class='sep'></div>
 
-### [`#developerslv` IRC bot](https://github.com/siers/bf) haskell, stack, irc-client, 2016 mar
-Small, but well designed. Employs a systemctl and ssh for automatic deployment.
+### [`#developerslv` IRC bot](https://github.com/siers/zn) haskell, stack, irc-client, 2016 mar
+Small, but well designed. Employs systemctl and ssh for automatic deployment.
 
 ### [Violin pitchfork](https://github.com/siers/violin-pitchfork) haskell, fft, sox, 2015 jun
 This program sounds a pitch for tuning tuning your violin
