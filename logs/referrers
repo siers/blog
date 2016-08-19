@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ -e logs/logs ]; then
+    logs="logs/"
+fi
+pcregrep -o '(?<=")\w+://[^"]+(?=")' "$logs"reports/clean | sort -u
