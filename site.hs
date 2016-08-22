@@ -13,8 +13,10 @@ monodateCtx =
     dateField "date" "%Y-%m-%d" `mappend`
     defaultContext
 
+matchMany routes = flip mapM routes . flip match
+
 main' = hakyll $ do
-    (`mapM` ["images/*", "source.tar.bz2"]) . (flip match) $ do
+    matchMany ["images/*", "source.tar.bz2", "js/*"] $ do
         route   idRoute
         compile copyFileCompiler
 

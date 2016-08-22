@@ -20,5 +20,14 @@
         <div id='body'>
             $body$
         </div>
+        <script src="/js/js.cookie.js"></script>
+        <script>
+            var id = 'iamahuman';
+            if (Cookies.get(id) === undefined) {
+                var r = new XMLHttpRequest();
+                r.open('GET', '/?' + id, true); r.send();
+            }
+            Cookies.set(id, '1', { expires: 1 });
+        </script>
     </body>
 </html>
