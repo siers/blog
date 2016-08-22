@@ -2,8 +2,9 @@
 
 more="additional-filters"
 
-grep -Ev "GET /[^ ]*(css|jpg|png|js|j\.s|google[a-f0-9]*\.html) |Googlebot|robots.txt|Baiduspider|YandexBot|\
-YandexDirect|similartech.com/smtbot|Twitterbot|facebookexternalhit|Google-HTTP-Java-Client|IGNORETHISFORTHISWILLBEREMOVED|\
-Yahoo! Slurp|Telesphoreo|/tmUnblock.cgi|\
-Mozilla/5\\.0 \\(Windows NT 5\\.1; rv:6\\.0\\.2\\) Gecko/20100101 Firefox/6\\.0\\.2|\
-bot\W$([ -e "$more" ] && cat "$more")"
+grep -Ev "GET /[^ ]*(css|jpg|png|js|j\.s|google[a-f0-9]*\.html) |\
+Googlebot|robots.txt|Baiduspider|YandexBot|YandexDirect|similartech.com/smtbot|\
+Twitterbot|facebookexternalhit|Google-HTTP-Java-Client|Yahoo! Slurp|\
+Telesphoreo|/tmUnblock.cgi|[bB]ot[^\"]*\"$|\
+IGNORETHISFORTHISWILLBEREMOVED$([ -e "$more" ] && cat "$more")|\
+Mozilla/5\\.0 \\(Windows NT 5\\.1; rv:6\\.0\\.2\\) Gecko/20100101 Firefox/6\\.0\\.2"
