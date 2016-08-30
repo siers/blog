@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p logs
-name="logs/$(date +%F)-access.log"
+name="logs/$(date +%Y-%m)-access.log"
 
 if ! getent hosts blog > /dev/null; then
     cp sample-logs "$name"
