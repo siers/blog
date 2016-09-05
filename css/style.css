@@ -1,11 +1,12 @@
 html, button, input, select, textarea { color: #222; }
 :focus { outline: none; }
+* { word-wrap: break-word; transition: 0.5s; }
 
-body { font: 20px georgia; margin: 0; }
+html, body { font: 20px georgia; margin: 0; overflow-x: hidden; }
 a    { color: #3e0078; font-style: italic; text-decoration: none; }
 
 #body       { color: #444; }
-#body, menu { max-width: 39em; margin: auto; padding: 15px 0; }
+#body, menu { max-width: 39em; margin: auto; padding: 15px 10px; }
 #blackline  { background: #444; }
 
 menu            { color: #999; }
@@ -13,7 +14,12 @@ menu a          { color: #ccc; font-style: normal; }
 menu menuitem   { display: inline-block; margin-left: 2em; }
 #home           { display: block; margin-left: 0; font: bold 40px 'Helvetica'; display: block; }
 
-#index a { font-style: normal; color: #999; }
+#index a { font-style: normal; color: #999; display: block; }
+@media screen and (max-width: 1280px) {
+    #index a {
+        margin-top: 2em;
+    }
+}
 #index ul { margin: 2em 0 0; padding: 0; }
 #index li { margin: 0 0 1em; padding: 0; list-style: none; font-family: 'Monospace'; position: relative; }
 #index li:hover:before {
@@ -37,20 +43,36 @@ menu menuitem   { display: inline-block; margin-left: 2em; }
 
 .date {
     position: absolute;
-    margin-left: -13em;
+    margin-left: -8em;
     left: 0;
     top: 0;
-    width: 10em;
     text-align: right;
-    font: 20px;
+    font-size: 20px;
     font-style: italic;
 }
+header .date { top: initial; bottom: 0; }
+@media screen and (max-width: 1280px) {
+    .date {
+        top: -1.3em;
+        margin: 0;
+        text-align: left;
+    }
+    header .date {
+        bottom: -1.8em;
+        margin: 0;
+        text-align: left;
+    }
+    header h1 {
+        margin-bottom: 1.2em;
+    }
+}
+
 
 /* article */
 article p       { /* text-indent: 1em; either it looks great or turns everything to shit, so unfortunately to the trash it goes. */ }
 article header  { position: relative; line-height: 40px; }
 article p code  { padding: 1px; background: #f0f0f0; padding: 2px; font-size: 15px; }
-article pre     { padding: 0.5em; background: #eacafc; font-size: 12px; color: black; margin-left: 60px; }
+article pre     { padding: 0.5em; background: #eacafc; font-size: 12px; color: black; margin: 0 1.5em; }
 article li      { list-style-type: decimal; }
 article img     { float: right; padding: 10px 0 10px 20px; }
 
