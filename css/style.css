@@ -23,10 +23,11 @@ menu menuitem   { display: inline-block; margin-left: 2em; }
 #index ul { margin: 2em 0 0; padding: 0; }
 #index li { margin: 0 0 1em; padding: 0; list-style: none; font-family: 'Monospace'; position: relative; }
 #index li:hover:before {
-    margin-left: -1em;
+    width: 2em;
+    text-align: center;
     content: "§";
     position: absolute;
-    left: 0;
+    left: -2em;
     top: 0;
 }
 
@@ -41,32 +42,26 @@ menu menuitem   { display: inline-block; margin-left: 2em; }
 
 #code p { margin: 0 0 1.5em 2em; }
 
-.date {
+/* dates */
+#index .date,
+header .date {
     position: absolute;
-    margin-left: -8em;
+    width: 9em; /* I sincerely hope that'll be enough. */
     left: 0;
     top: 0;
     text-align: right;
     font-size: 20px;
     font-style: italic;
 }
-header .date { top: initial; bottom: 0; }
+#index .date { margin-left: -11em; }
+header .date { margin-left: -12em; white-space: nowrap; }
 @media screen and (max-width: 1280px) {
-    .date {
-        top: -1.3em;
-        margin: 0;
-        text-align: left;
-    }
-    header .date {
-        bottom: -1.8em;
-        margin: 0;
-        text-align: left;
-    }
-    header h1 {
-        margin-bottom: 1.2em;
-    }
-}
+    #index .date { top: -1.3em; margin: 0; text-align: left; }
+    header .date { top: inherit; bottom: -1.8em; margin: 0; text-align: left; }
 
+    header h1 { margin-bottom: 1.5em; }
+    header h1 + header .date { margin-bottom: 1.2em; }
+}
 
 /* article */
 article p       { /* text-indent: 1em; either it looks great or turns everything to shit, so unfortunately to the trash it goes. */ }
@@ -92,10 +87,11 @@ article h2        { font-size: 30px; }
 
 article h1:hover:before,
 article h2:hover:before {
-    margin-left: -1em;
     content: "¶";
     position: absolute;
-    left: 0;
+    text-align: right;
+    width: 1em;
+    left: -1.5em;
     top: 0;
 }
 
