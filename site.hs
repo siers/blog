@@ -16,7 +16,7 @@ monodateCtx =
 matchMany routes = flip mapM routes . flip match
 
 main' = hakyll $ do
-    matchMany ["images/*", "source.tar.bz2", "js/*"] $ do
+    matchMany ["images/*", "js/*", "favicon.ico", "source.tar.bz2"] $ do
         route   idRoute
         compile copyFileCompiler
 
