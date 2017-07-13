@@ -2,4 +2,4 @@
 
 date="$(date -d "$1" +%b/%Y)"
 
-grep -E '^[0-9\. \-]+\[[^/]+/'$date
+grep -E '\[[^/]+/'$date
