@@ -31,6 +31,7 @@ menu menuitem   { display: inline-block; margin-left: 2em; }
     top: 0;
 }
 
+#code h2 { font-size: 20px; }
 #code h3 { margin-bottom: 0.33em; font-size: 12px; }
 #code h4 { margin-bottom: 2.33em; font-size: 12px; color: #777; }
 
@@ -41,6 +42,7 @@ menu menuitem   { display: inline-block; margin-left: 2em; }
 #code h4 a:first-child { font-size: 1.3em; padding-right: 0.66em; }
 
 #code p { margin: 0 0 1.5em 2em; }
+#code .bunch { padding-left: 1.5em; }
 
 /* dates */
 #index .date,
