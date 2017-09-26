@@ -1,9 +1,11 @@
 #!/bin/zsh
 
+set -eu
+
 # 0 0,4,8,12,16,20 * * * sleep $(( $RANDOM \% 60 + 60 )); $HOME/bin/jobs/update-blog &> /tmp/.blogout; DISPLAY="$(ps aux | grep -Po '(?<=xserverrc ):\d+')" notify-send "blog@$(date +\%H:\%M)"
 
 compile() {
-    if [ -z "$quick" ]; then
+    if [ -z "${quick:-}" ]; then
         stack build
     else
         true
@@ -12,7 +14,7 @@ compile() {
 
 build() {
     cd ~s/code/haskell/blag
-    compile && (stack exec site clean && stack exec site bu) && \
+    compile && (stack exec site clean && stack exec site build) && \
         rsync -a _site/ 'blog:$HOME/html/'
 }
 
