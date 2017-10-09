@@ -3,7 +3,7 @@
 mkdir -p logs
 name="logs/$(date +%Y-%m)-access.log"
 
-if ! getent hosts blog > /dev/null; then
+if ! getent hosts blog > /dev/null && ! grep -rEl '^ *Host blog *$' ~/.ssh > /dev/null; then
     cp sample-logs "$name"
 else
     cp "logs/$(ls logs | tail -n1)" "$name"
