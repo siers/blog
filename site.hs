@@ -15,6 +15,14 @@ monodateCtx =
 
 matchMany routes = flip mapM routes . flip match
 
+renderPost :: Rules ()
+renderPost = do
+    route $ setExtension "html"
+    compile $ pandocCompiler
+        >>= loadAndApplyTemplate "templates/post.html"    postCtx
+        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= relativizeUrls
+
 main' = hakyll $ do
     matchMany ["images/*", "js/*", "favicon.ico", "source.tar.bz2"] $ do
         route   idRoute
@@ -24,12 +32,14 @@ main' = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    (`mapM` ["code.md", "portfolio-intel.md", "portfolio-data.md", "about.md", "posts/*"]) . (flip match) $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+    flip matchMany renderPost
+        [ "code.md"
+        , "portfolio.md"
+        , "portfolio-js.md"
+        , "portfolio-data.md"
+        , "portfolio-intel.md"
+        , "about.md"
+        , "posts/*"]
 
     match "index.html" $ do
         route idRoute
