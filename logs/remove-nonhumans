@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+all = $<.read.each_line.to_a
+
+human_proof = all.grep(/iamahuman/).uniq
+human_addrs = human_proof.map { |h| (h.match(/^[^ ]+/) || [])[0] }.compact
+
+human_filter = Regexp.new("^(#{ human_addrs.sort.join("|") }) ")
+human_reqs = all.select { |r| human_filter =~ r }
+
+puts human_reqs
