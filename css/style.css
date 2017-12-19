@@ -71,8 +71,9 @@ header .date { margin-left: -12em; white-space: nowrap; }
 
 /* article */
 article p          { /* text-indent: 1em; either it looks great or turns everything to shit, so unfortunately to the trash it goes. */ }
+article            { line-height: 1.3em; }
 article header     { position: relative; line-height: 40px; }
-article pre        { background: #eacafc; font-size: 12px; padding: 0.5em; color: black; margin: 1em 1.5em; }
+article pre        { line-height: normal; background: #eacafc; font-size: 12px; padding: 0.5em; color: black; margin: 1em 1.5em; }
 article pre > code { background: #eacafc; font-size: 12px; }
 article code       { background: #f0f0f0; font-size: 15px; padding: 2px; }
 article li         { list-style-type: decimal; padding: 0 0 0.5em; }
@@ -116,6 +117,7 @@ article h2:hover:before { opacity: 1; }
     margin: 1em auto;
     border-top: 1px dotted;
     text-align: center;
+    line-height: normal;
     font-size: 3.5em;
     font-family: georgia, 'Arial Unicode MS', 'Code2000', 'DejaVu Sans', 'Dingbats', 'EversonMono',
     'EversonMono-Bold', 'EversonMono-BoldOblique', 'EversonMono-ObliquDejaVuique', 'FreeSerif',
