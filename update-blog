@@ -1,21 +1,23 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 set -eu
 
-# 0 0,4,8,12,16,20 * * * sleep $(( $RANDOM \% 60 + 60 )); $HOME/bin/jobs/update-blog &> /tmp/.blogout; DISPLAY="$(ps aux | grep -Po '(?<=xserverrc ):\d+')" notify-send "blog@$(date +\%H:\%M)"
+# 0 0,4,8,12,16,20 * * * sleep $(( $RANDOM \% 60 + 60 )); $HOME/bin/jobs/update-blog &> /var/tmp/blaglog.cron
 
-compile() {
-    if [ -z "${quick:-}" ]; then
-        stack build
-    else
-        true
-    fi
+build-site() {
+    # `cabal exec` doesn't work on NixOS for some reason
+    # cabal exec site clean
+    # cabal exec site build
+
+    dist/build/site/site clean
+    dist/build/site/site build
+
+    rsync --delete -a _site/ 'blog:$HOME/html/'
 }
 
-build() {
-    cd ~s/code/haskell/blag
-    compile && (stack exec site clean && stack exec site build) && \
-        rsync -a _site/ 'blog:$HOME/html/'
-}
+cd $HOME/code/haskell/blag
 
-build 2>&1 | tee /var/tmp/blaglog
+# Run the potentially very expensive `cabal build` manually, please:
+# nix-shell -E "$(cabal2nix --shell .)" --run 'cabal build'
+
+build-site 2>&1 | tee /var/tmp/blaglog

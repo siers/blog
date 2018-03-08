@@ -1,6 +1,6 @@
 name:                blag
 version:             0.1.0.0
-copyright:           Copyleft
+license:             MIT
 build-type:          Simple
 cabal-version:       >=1.20
 
