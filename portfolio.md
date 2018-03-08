@@ -10,7 +10,13 @@ C projects are older and their code quality is inversely proportional to their a
 <div class='sep'></div>
 
 ### [`#developerslv` IRC bot](https://github.com/siers/zn) haskell, stack, irc-client, 2016 mar
-Small, but well designed. Employs systemctl and ssh for automatic deployment.
+It's the «#developerslv» channel bot that is a great excuse to code haskell.
+
+Uses regex-tdfa, lens, maybes and eithers, megaparsec, telegram-api, http-client-tls.  
+Can be compiled with either nix or stack.
+
+Currently deployed to a droplet inside a NixOS-built container[(read more)](https://raitis.veinbahs.lv/posts/2017-10-11-building-docker-containers-with-nixos.html),
+together with the [`open_nsfw`](https://github.com/yahoo/open_nsfw) neural network, also wrapped in a [container](https://github.com/siers/zn/blob/master/lib/opennsfw-caffe-server/Dockerfile).
 
 ### [Violin pitchfork](https://github.com/siers/violin-pitchfork) haskell, fft, sox, 2015 jun
 This program sounds a pitch for tuning tuning your violin
