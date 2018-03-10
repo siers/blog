@@ -14,8 +14,13 @@ It should be something like:
     cabal exec ghc site
     ./site build
 
+    or
+
+    nix-shell -E "$(cabal2nix --shell .)" --run 'cabal build'
+    which should be faster
+
 ¶ Logs
-I wrote a bunch of scripts for analyzing lighty logs,
+I wrote a bunch of scripts for analyzing lighttpd logs,
 so check those out! Sample logs(anonymized) are provided.
 
     cd logs
