@@ -1,11 +1,7 @@
-¶ Hey there.
-If you actually look at this, and I'm sure very few people have
-I wouldn't mind an email or a message,
-just to know it was worthwhile keeping this presentable. :)
-
 ¶ About
 This blog was once written in ruby, jekyll and I really disliked jekyll since the day I saw it.
 I just didn't know of anything better until I discovered hakyll.
+I'm sure just writing HTML would've been the best choice. (Shoutout to my homie RMS, stallman.org)
 
 ¶ Compiling
 It should be something like:
@@ -17,12 +13,7 @@ It should be something like:
     or
 
     nix-shell -E "$(cabal2nix --shell .)" --run 'cabal build'
-    which should be faster
 
-¶ Logs
-I wrote a bunch of scripts for analyzing lighttpd logs,
-so check those out! Sample logs(anonymized) are provided.
+    or
 
-    cd logs
-    ./gen
-    vim -p reports/{report,clean}
+    see default.nix
