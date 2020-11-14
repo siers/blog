@@ -10,14 +10,13 @@
 
 stdenv.mkDerivation {
   name = "blog";
-  src = ./.;
+  src = nix-gitignore.gitignoreSourcePure [".git" "_cache" "_site" "result"] ./.;
   phases = "unpackPhase buildPhase";
   buildInputs = [
     (haskellPackages.ghcWithPackages (p: with p; [ hakyll ]))
     git
   ];
   buildPhase = ''
-    find
     ghc -O2 -dynamic --make site.hs -o generate-site
 
     export LOCALE_ARCHIVE="${glibcLocales}/lib/locale/locale-archive";
