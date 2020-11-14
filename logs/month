@@ -1,5 +1,0 @@
-#!/bin/sh
-
-date="$(date -d "$1" +%b/%Y)"
-
-grep -E '\[[^/]+/'$date
