@@ -10,7 +10,7 @@
 
 stdenv.mkDerivation {
   name = "blog";
-  src = nix-gitignore.gitignoreSourcePure [".git" "_cache" "_site" "result"] ./.;
+  src = nix-gitignore.gitignoreSource [".git" "result"] ./.;
   phases = "unpackPhase buildPhase";
   buildInputs = [
     (haskellPackages.ghcWithPackages (p: with p; [ hakyll ]))

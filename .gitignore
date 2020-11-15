@@ -3,6 +3,7 @@ site
 site.hi
 .stack-work
 dist
+dist-newstyle
 
 _cache
 _site

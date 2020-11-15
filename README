@@ -12,7 +12,8 @@ It should be something like:
 
     or
 
-    nix-shell -E "$(cabal2nix --shell .)" --run 'cabal build'
+    nix-shell -E "$(cabal2nix --shell .)" --run zsh
+    # and then the cabal build/cabal run
 
     or
 
