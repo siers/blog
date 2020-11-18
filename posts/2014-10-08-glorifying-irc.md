@@ -1,7 +1,7 @@
 ---
 title: Glorifying IRC
 ---
-Getting myself to learn or do something interesting to make self smarter isn't always just that easy. Motivation comes from ever learning more, but unless one's been at it the last couple of days, the will only weakens.
+Getting myself to learn or do something interesting to make self smarter isn't always just that easy. Motivation comes from ever learning more and, unless one's been crunching at it the last couple of days, the will only weakens.
 
 What I can do to get some motivation though,
 is to find a problem that tickles one's mind enough
