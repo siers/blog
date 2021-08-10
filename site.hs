@@ -38,6 +38,7 @@ main' = hakyll $ do
         , "portfolio-js.md"
         , "portfolio-data.md"
         , "portfolio-intel.md"
+        , "toys.md"
         , "about.md"
         , "posts/*"]
 
